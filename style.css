@@ -1,0 +1,12 @@
+.container {
+    background-color: aqua;
+    margin: auto;
+    width: 350px;
+    height: 150px;
+}
+button {
+    width: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
