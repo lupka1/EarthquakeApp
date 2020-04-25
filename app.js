@@ -84,7 +84,11 @@ function jedenNumer(e) {
       
        var lon = m[i][0];
        var lat = m[i][1];
+
        var rad = m[i][2]
+
+       var rad = m[i][2];
+
        
         var feature = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
@@ -208,6 +212,7 @@ function view() {
     })
 }
 
+
 function view1() {
     new Vue({
         el: '#app',
@@ -216,6 +221,8 @@ function view1() {
                 info1: null
             }
         },
+      
+      
         mounted () {
             axios
                 .get('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson')
@@ -243,3 +250,4 @@ function view2() {
 function legenda() {
 
 }
+
