@@ -1,15 +1,56 @@
+@media only screen and (max-width: 600px) {
+    body {
+        background: url("25987min.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+    .piec {
+        background-color: white;
+        width: 100%;
+        opacity: 0.7;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    body {
+        background: url("25987mid.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+    .piec {
+        background-color: white;
+        width: 45%;
+        opacity: 0.7;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    body {
+        background: url("25987.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+    .piec {
+        background-color: white;
+        width: 45%;
+        opacity: 0.7;
+    }
+}
 .container {
     background-color: aqua;
     margin: auto;
     width: 350px;
     height: 150px;
 }
-button {
-    width: 300px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-h2 {
-    text-align: center;   
+#Map {
+height: 800px;
 }
