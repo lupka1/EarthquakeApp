@@ -44,9 +44,9 @@ function jedenNumer(e) {
     p.id = "app";
     p.innerHTML = `
     <ul>
-        <li v-for="i in info">Place: {{ i.properties.place }}<br>Magnitude: {{ i.properties.mag }} Richter scale</li>
+        <li v-for="i in info">Place: <b>{{ i.properties.place }}</b><br>Magnitude: <b>{{ i.properties.mag }} Richter scale</b></li>
     </ul>
-    <p class="legend">View legend</p>
+    <button class="legend">View legend</button>
     `;
     harpunBody.appendChild(p);
 
@@ -199,8 +199,8 @@ function trzyNumer(e) {
         response.features.forEach(i => {
             let x = i.geometry.coordinates[0];
             let y = i.geometry.coordinates[1];
-            console.log(x);
-            console.log(y);
+            //console.log(x);
+            //console.log(y);
             m.push([x, y]);
         });
         //console.log('Array:', m);
