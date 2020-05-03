@@ -8,6 +8,7 @@ const title = document.querySelector('.title');
 
 function jedenNumer(e) {
     var m = [];
+    var mag =[];
 
     const xhr = new XMLHttpRequest();
     
@@ -15,16 +16,16 @@ function jedenNumer(e) {
     
     xhr.onload = function() {
         const response = JSON.parse(this.responseText);
-        //console.log(response.features);
+    
         response.features.forEach(i => {
             let x = i.geometry.coordinates[0];
             let y = i.geometry.coordinates[1];
             let z = i.geometry.coordinates[2];
-            //console.log(x);
-            //console.log(y);
+
             m.push([x, y, z]);
+            mag.push(i.properties.mag);
         });
-        console.log('Array:', m);
+
         return m;
     };
     
@@ -85,11 +86,12 @@ function jedenNumer(e) {
        var lon = m[i][0];
        var lat = m[i][1];
        var rad = m[i][2]
-       
+       var magnitude = Math.min(Math.max(mag[i] *5, 15), 35) ;
+
         var feature = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
                 {description: "marker number " + i} ,
-                {externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
+                {externalGraphic: 'img/marker.png', graphicHeight: magnitude, graphicWidth: magnitude, graphicXOffset:-12, graphicYOffset:-25  }
             );             
         vectorLayer.addFeatures(feature);
     }                        
@@ -99,6 +101,7 @@ function jedenNumer(e) {
 
 function dwaNumer(e) {
     var m = [];
+    var mag = [];
 
     const xhr = new XMLHttpRequest();
     
@@ -106,15 +109,16 @@ function dwaNumer(e) {
     
     xhr.onload = function() {
         const response = JSON.parse(this.responseText);
-        //console.log(response.features);
+       
         response.features.forEach(i => {
             let x = i.geometry.coordinates[0];
             let y = i.geometry.coordinates[1];
-            console.log(x);
-            console.log(y);
+    
             m.push([x, y]);
+
+            mag.push(i.properties.mag);
         });
-        //console.log('Array:', m);
+
         return m;
     };
     
@@ -174,11 +178,12 @@ function dwaNumer(e) {
       
        var lon = m[i][0];
        var lat = m[i][1];
-       
+       var magnitude = Math.min(Math.max(mag[i] *5, 15), 35) ;
+
         var feature = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
                 {description: "marker number " + i} ,
-                {externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
+                {externalGraphic: 'img/marker.png', graphicHeight: magnitude, graphicWidth: magnitude, graphicXOffset:-12, graphicYOffset:-25  }
             );             
         vectorLayer.addFeatures(feature);
     }                        
@@ -188,6 +193,7 @@ function dwaNumer(e) {
 
 function trzyNumer(e) {
     var m = [];
+    var mag = [];
 
     const xhr = new XMLHttpRequest();
     
@@ -195,15 +201,15 @@ function trzyNumer(e) {
     
     xhr.onload = function() {
         const response = JSON.parse(this.responseText);
-        //console.log(response.features);
+
         response.features.forEach(i => {
             let x = i.geometry.coordinates[0];
             let y = i.geometry.coordinates[1];
-            console.log(x);
-            console.log(y);
+
             m.push([x, y]);
+            mag.push(i.properties.mag);
         });
-        //console.log('Array:', m);
+
         return m;
     };
     
@@ -263,11 +269,12 @@ function trzyNumer(e) {
       
        var lon = m[i][0];
        var lat = m[i][1];
-       
+       var magnitude = Math.min(Math.max(mag[i] *5, 15), 35) ;
+
         var feature = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
                 {description: "marker number " + i} ,
-                {externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
+                {externalGraphic: 'img/marker.png', graphicHeight: magnitude, graphicWidth: magnitude, graphicXOffset:-12, graphicYOffset:-25  }
             );             
         vectorLayer.addFeatures(feature);
     }                        
